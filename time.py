@@ -52,12 +52,12 @@ while(1):
 			pygame.mixer.music.play(-1)
                 if(getdis()<15.0):
 		    pygame.mixer.music.set_volume(0.5)
-		    f = open('GetUpList.txt','a')
+		    f = open('/home/pi/GetUpList2/GetUpList.txt','a')
 		    f.write('%d %d %d %d %d\n' % (Nowclock.year,Nowclock.month,Nowclock.day,Nowclock.hour,Nowclock.minute))
 		    f.close()
 
 		    comment = datetime.datetime.now().strftime("%Y/%m/%d-%H:%M:%S")
-		    os.system('git add .')
+		    os.system('git add GetUpList.txt')
 		    os.system('git commit -m {}'.format(comment))
 		    os.system('git push')
 
