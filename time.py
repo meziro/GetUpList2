@@ -52,18 +52,15 @@ while(1):
 			pygame.mixer.music.play(-1)
                 if(getdis()<15.0):
 		    pygame.mixer.music.set_volume(0.5)
-                    ##センサに反応した時の日時を記録
 		    f = open('GetUpList.txt','a')
 		    f.write('%d %d %d %d %d\n' % (Nowclock.year,Nowclock.month,Nowclock.day,Nowclock.hour,Nowclock.minute))
 		    f.close()
 
-                    ##条件にはいる度githubへpush
 		    comment = datetime.datetime.now().strftime("%Y/%m/%d-%H:%M:%S")
 		    os.system('git add .')
 		    os.system('git commit -m {}'.format(comment))
 		    os.system('git push')
 
-                    ##徐々に音量をあげる
 	if((GetTime == NowTime-1 and pygame.mixer.music.get_volume() <= 0.5) or (GetTime == NowTime-2 and pygame.mixer.music.get_volume() <=0.6)or( GetTime == NowTime-3 and pygame.mixer.music.get_volume() <=0.7)or (GetTime == NowTime-4 and pygame.mixer.music.get_volume() <=0.8)or (GetTime == NowTime-5 and pygame.mixer.music.get_volume() <=0.9)):
 		pygame.mixer.music.set_volume(pygame.mixer.music.get_volume()+0.1)
 	time.sleep(3)
