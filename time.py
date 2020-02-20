@@ -55,19 +55,10 @@ while(1):
 		f = open('GetUpList.txt','a')
 		f.write('%d %d %d %d %d\n' % (Nowclock.year,Nowclock.month,Nowclock.day,Nowclock.hour,Nowclock.minute))
 		f.close()
-		#cmd = "/home/pi/GetUpList2/sendGit.sh /R /W:"
-		#subprocess.call(cmd,shell = True)
 		comment = datetime.datetime.now().strftime("%Y/%m/%d-%H:%M:%S")
 		os.system('git add .')
 		os.system('git commit -m {}'.format(comment))
 		os.system('git push')
-		#subprocess.run(['git add .','git commit -m "auto"','git push'])		
 	if((GetTime == NowTime-1 and pygame.mixer.music.get_volume() <= 0.5) or (GetTime == NowTime-2 and pygame.mixer.music.get_volume() <=0.6)or( GetTime == NowTime-3 and pygame.mixer.music.get_volume() <=0.7)or (GetTime == NowTime-4 and pygame.mixer.music.get_volume() <=0.8)or (GetTime == NowTime-5 and pygame.mixer.music.get_volume() <=0.9)):
 		pygame.mixer.music.set_volume(pygame.mixer.music.get_volume()+0.1)
 	time.sleep(3)
-
-
-comment = datetime.datetime.now().strftime("%Y/%m/%d-%H:%M:%S")
-os.system('git add .')
-os.system('git commit -m {}'.format(comment))
-os.system('git push')
