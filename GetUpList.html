@@ -4,8 +4,66 @@
 <meta http-equiv="CONTENT-TYPE" cont
 ent="text/html; charset=utf-8" />
 <title>Object Test</title>
+  <style>
+   
+  body{
+    font-family: "メイリオ", meiryo;
+    font-size:20px;
+    }
+    
+  h1 {
+  position: relative;
+  padding: .75em 1em;
+  background-color: #f0f0f0;
+}
+h1::before,
+h1::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  border-style: solid;
+  border-color: transparent;
+}
+h1::before {
+  left: 0;
+  border-width: 0 15px 15px 0;
+  border-right-color: #ccc;
+}
+h1::after {
+  right: 0;
+  border-style: solid;
+  border-width: 15px 15px 0 0;
+  border-top-color: #ccc;
+}
+ 
+    .box5 {
+    width:1000px;
+    height:1000px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    position:reative;
+    top:500px;
+    left:500px;
+}
+.box5 p {
+    font-family: "メイリオ", meiryo;
+    font-size:16px;
+    width:100px;
+    height:100px;
+    margin: 0; 
+    padding: 0;
+    
+}
+  </style>
 </head>
 <body>
-<OBJECT DATA="./GetUpList.txt"TYPE="text/plain" WIDTH="1000%" HEIGHT="1000%"></OBJECT>
+   <h1>目覚まし時計!</h1>
+  <div class = "box5">
+    position:reative;
+    top:500px;
+    left:500px;
+<OBJECT DATA="./GetUpList.txt"TYPE="text/plain" WIDTH="100%" HEIGHT="100%"></OBJECT>
+  </div>
 </body>
 </html>
